@@ -25,6 +25,9 @@ EXPOSE  80
 # Vulnerability Advisor : uninstall openssh-server
 # RUN apt-get --purge remove openssh-server
 
+# Vulnerability Advisor : temporarily remove imagemagick until version update in node image
+RUN dpkg --purge --force-all imagemagick
+
 # Vulnerability Advisor : Fix PASS_MAX_DAYS, PASS_MIN_DAYS and PASS_MIN_LEN, common-password
 RUN mv -f /etc/login.defs /etc/login.defs.orig
 RUN sed 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS 90/' /etc/login.defs.orig > /etc/login.defs
