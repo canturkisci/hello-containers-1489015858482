@@ -12,8 +12,8 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-FROM node
-#FROM ibmnode
+#FROM node
+FROM registry.ng.bluemix.net/ibmnode
 MAINTAINER Philippe Mulet "philippe_mulet@fr.ibm.com"
 
 # Install the application
